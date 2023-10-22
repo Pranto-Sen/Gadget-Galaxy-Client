@@ -1,13 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import AddProduct from './Components/AddProduct.jsx';
-import UpdateProduct from './Components/UpdateProduct.jsx';
-import Home from './Components/Home';
-import Root from './Components/Root';
-import Brand from './Components/Brand';
-import ProductDetails from './Components/ProductDetails';
+import AddProduct from "./Components/AddProduct.jsx";
+import UpdateProduct from "./Components/UpdateProduct.jsx";
+import Home from "./Components/Home";
+import Root from "./Components/Root";
+import Brand from "./Components/Brand";
+import ProductDetails from "./Components/ProductDetails";
+import MyCart from "./Components/MyCart";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,10 +29,19 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/product/${params.id}`),
       },
-    
+      {
+        path: "/productdetails/:id",
+        element: <ProductDetails></ProductDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/details/${params.id}`),
+      },
       {
         path: "/:brand",
         element: <Brand></Brand>,
+      },
+      {
+        path: "/mycart",
+        element: <MyCart></MyCart>,
       },
     ],
   },
