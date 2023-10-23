@@ -9,6 +9,8 @@ import Root from "./Components/Root";
 import Brand from "./Components/Brand";
 import ProductDetails from "./Components/ProductDetails";
 import MyCart from "./Components/MyCart";
+import Register from "./Components/Register";
+import Login from "./Components/Login";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
       {
         path: "/mycart",
         element: <MyCart></MyCart>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
       },
     ],
   },

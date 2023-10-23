@@ -26,9 +26,9 @@ const UpdateProduct = () => {
       description,
       rating,
     };
-
+    console.log(updatedProduct);
     // Send a PUT request to update the product
-    fetch(`http://localhost:5000/product/${_id}`, {
+    fetch(`http://localhost:5000/product/${product._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

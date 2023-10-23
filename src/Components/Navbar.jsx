@@ -20,8 +20,8 @@ const Navbar = () => {
 
           {/* <!-- Right Side - Login and Register --> */}
           <div class="flex space-x-4 md:space-x-8 text-black">
-            <a href="#">Login</a>
-            <a href="#">Register</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
           </div>
         </div>
       </nav>
