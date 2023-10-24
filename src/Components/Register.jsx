@@ -1,23 +1,23 @@
 import React, { useContext, useState } from "react";
 // import google from "../images/google.png";
 // import { FcGoogle } from "react-icons/fc";
-// import { AuthContext } from "./Providers/AuthProvider";
 // import Swal from "sweetalert2";
 // import { updateProfile } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const Register = () => {
   const [registerError, setRegisterError] = useState("");
   const [registerSuccess, setRegisterSuccess] = useState("");
 
-//   const { createUser, googleLogin } = useContext(AuthContext);
+   const { createUser, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    // console.log(name, email, password);
+   console.log(name, email, password);
     setRegisterError("");
     setRegisterSuccess("");
 

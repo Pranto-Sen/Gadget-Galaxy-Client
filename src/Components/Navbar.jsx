@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from './../Providers/AuthProvider';
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleSignout= () => {
+    logOut()
+      .then()
+    .catch()
+  }
   return (
     <div>
       <nav class="bg-white shadow-md p-4">
@@ -20,8 +28,11 @@ const Navbar = () => {
 
           {/* <!-- Right Side - Login and Register --> */}
           <div class="flex space-x-4 md:space-x-8 text-black">
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
+            
+            <Link to="/register">Register</Link>
+            {
+              user ? <button onClick={handleSignout}>sign out</button> :<Link to="/login">Login</Link>
+            }
           </div>
         </div>
       </nav>

@@ -20,12 +20,7 @@ const Cards = ({ item }) => {
                 <p>{details}</p>
               )}
 
-              {/* <Link
-            to={`item/${id}`}
-            className="text-blue-700 font-bold card-actions justify-end "
-          >
-            Details
-          </Link> */}
+            
             </div>
           </div>
         </div>
