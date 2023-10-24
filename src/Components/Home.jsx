@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Cards from './Cards';
+import Slider from './Slider';
+import Footer from './Footer';
 
 const Home = () => {
      const [items, setItems] = useState([]);
@@ -11,8 +13,9 @@ const Home = () => {
   });
     return (
       <div>
+        <Slider></Slider>
         <h2 className="text-4xl font-bold text-center pt-20">
-          Build YOUR successfully Future with proper training
+          Choice your brand
         </h2>
         {/* First banner */}
         <div className="grid md:grid-cols-1 lg:grid-cols-3 my-16">
@@ -20,6 +23,7 @@ const Home = () => {
             <Cards item={item}></Cards>
           ))}
         </div>
+        <Footer></Footer>
       </div>
     );
 };
