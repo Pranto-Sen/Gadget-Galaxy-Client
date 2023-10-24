@@ -1,23 +1,23 @@
 import React, { useContext, useState } from "react";
 // import google from "../images/google.png";
 // import { FcGoogle } from "react-icons/fc";
-// import Swal from "sweetalert2";
-// import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const [registerError, setRegisterError] = useState("");
   const [registerSuccess, setRegisterSuccess] = useState("");
 
-   const { createUser, googleLogin } = useContext(AuthContext);
+  const { createUser, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-   console.log(name, email, password);
+    console.log(name, email, password);
     setRegisterError("");
     setRegisterSuccess("");
 
@@ -33,11 +33,12 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        // console.log(result.user);
+       console.log(result.user);
         updateProfile(result.user, {
           displayName: name,
           photoURL: "https://i.ibb.co/FgrXW5p/profile-3135715.png",
         });
+        console.log("up", result.user);
         Swal.fire({
           text: "Register Successfully",
           icon: "success",
@@ -50,22 +51,22 @@ const Register = () => {
         console.log(err);
       });
   };
-//   const handleGoogleClick = () => {
-//     console.log("inside goo");
-//     googleLogin()
-//       .then((res) => {
-//         console.log(res);
-//         Swal.fire({
-//           text: "Register Successfully",
-//           icon: "success",
-//           confirmButtonText: "Done",
-//         });
-//         navigate("/");
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   };
+  const handleGoogleClick = () => {
+    console.log("inside goo");
+    googleLogin()
+      .then((res) => {
+        console.log(res);
+        Swal.fire({
+          text: "Register Successfully",
+          icon: "success",
+          confirmButtonText: "Done",
+        });
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div>
@@ -130,7 +131,7 @@ const Register = () => {
             </form>
 
             <button
-            //   onClick={handleGoogleClick}
+              onClick={handleGoogleClick}
               type="submit"
               class="flex w-full bg-slate-200  text-black font-semibold rounded-lg
                py-3 mt-6 "

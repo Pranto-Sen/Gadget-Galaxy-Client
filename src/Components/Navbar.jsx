@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import { AuthContext } from './../Providers/AuthProvider';
+import { AuthContext } from '../Providers/AuthProvider';
+// import { AuthContext } from './../Providers/AuthProvider';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -15,8 +16,12 @@ const Navbar = () => {
       <nav class="bg-white shadow-md p-4">
         <div class="container mx-auto flex flex-wrap items-center justify-between">
           {/* <!-- Left Side - Logo --> */}
-          <div class="text-black text-2xl font-semibold">
-            <a href="#">Your Logo</a>
+          <div class="text-black text-2xl font-semibold flex justify-center items-center">
+            <img
+              className="w-16 mr-2 rounded-2xl"
+              src="https://i.ibb.co/tZsm74p/glowing-filament-ignites-ideas-innovative-solutions-generated-by-ai.jpg"
+            ></img>
+            <h2 className='font-bold text-2xl'>Gadget Galaxy</h2>
           </div>
 
           {/* <!-- Middle - Navigation Links --> */}
@@ -28,11 +33,25 @@ const Navbar = () => {
 
           {/* <!-- Right Side - Login and Register --> */}
           <div class="flex space-x-4 md:space-x-8 text-black">
-            
             <Link to="/register">Register</Link>
-            {
-              user ? <button onClick={handleSignout}>sign out</button> :<Link to="/login">Login</Link>
-            }
+            {user ? (
+              <div>
+                {" "}
+                <button onClick={handleSignout}>sign out</button>{" "}
+              </div>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
+            {user && (
+              <div className="flex items-center">
+                <img
+                  src={user.photoURL}
+                  className="w-6 h-6 mr-2"
+                  alt={user.displayName}
+                />
+                <p>{user.displayName}</p>
+              </div>
+            )}
           </div>
         </div>
       </nav>

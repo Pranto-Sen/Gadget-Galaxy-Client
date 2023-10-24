@@ -13,11 +13,12 @@ import Register from "./Components/Register";
 import Login from "./Components/Login";
 import AuthProvider from "./Providers/AuthProvider";
 import PrivateRoute from "./Components/PrivateRoute";
+import ErrorPage from "./Components/ErrorPage";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    // errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -33,13 +34,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateproduct/:id",
-        element: <UpdateProduct></UpdateProduct>,
+        element: (
+          <PrivateRoute>
+            <UpdateProduct></UpdateProduct>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/product/${params.id}`),
       },
       {
         path: "/productdetails/:id",
-        element: <ProductDetails></ProductDetails>,
+        element: (
+          <PrivateRoute>
+            <ProductDetails></ProductDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/details/${params.id}`),
       },
