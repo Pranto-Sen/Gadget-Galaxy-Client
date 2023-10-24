@@ -1,15 +1,14 @@
 import React, { useContext, useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
-// import Swal from "sweetalert2";
+ import Swal from "sweetalert2";
 
 const Login = () => {
   const [loginError, setLoginError] = useState("");
   const [loginSuccess, setLoginSuccess] = useState("");
   const {signIn} = useContext(AuthContext)
-//   const { signIn } = useContext(AuthContext);
-//   const location = useLocation();
-//   const navigate = useNavigate();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
