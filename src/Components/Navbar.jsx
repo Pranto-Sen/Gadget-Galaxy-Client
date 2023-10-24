@@ -21,23 +21,23 @@ const Navbar = () => {
               className="w-16 mr-2 rounded-2xl"
               src="https://i.ibb.co/tZsm74p/glowing-filament-ignites-ideas-innovative-solutions-generated-by-ai.jpg"
             ></img>
-            <h2 className='font-bold text-2xl'>Gadget Galaxy</h2>
+            <h2 className="font-bold text-2xl">Gadget Galaxy</h2>
           </div>
 
           {/* <!-- Middle - Navigation Links --> */}
-          <div class="flex space-x-4 md:space-x-8 text-black">
+          <div class="flex space-x-4 md:space-x-8 text-black font-semibold text-lg">
             <Link to="/">Home</Link>
             <Link to="/addproduct">Add Product</Link>
             <Link to="/mycart">My Cart</Link>
           </div>
 
           {/* <!-- Right Side - Login and Register --> */}
-          <div class="flex space-x-4 md:space-x-8 text-black">
+          <div class="flex space-x-4 md:space-x-8 text-black font-semibold text-lg">
             <Link to="/register">Register</Link>
             {user ? (
               <div>
                 {" "}
-                <button onClick={handleSignout}>sign out</button>{" "}
+                <button onClick={handleSignout}>SignOut</button>{" "}
               </div>
             ) : (
               <Link to="/login">Login</Link>

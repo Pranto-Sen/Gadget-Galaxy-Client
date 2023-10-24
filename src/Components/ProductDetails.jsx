@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { addToLS } from '../utilities/localstorage';
+import Swal from 'sweetalert2';
 
 const ProductDetails = () => {
     const [cart, setCart] = useState([])
@@ -8,7 +9,12 @@ const ProductDetails = () => {
     const handleAddProduct = (product) => {
         const newCart = [...cart, product];
         setCart(newCart);
-       addToLS(product);
+      addToLS(product);
+      Swal.fire({
+        text: "Add to Cart Successfully",
+        icon: "success",
+        confirmButtonText: "Done",
+      });
     };
      console.log("click", cart);
     return (
