@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import UpdateProduct from './UpdateProduct';
+import UpdateProduct from "./UpdateProduct";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const Brand = () => {
- 
   const { brand } = useParams();
   const [brands, setBrands] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -138,7 +137,7 @@ const Brand = () => {
           ))
         ) : (
           <p className="font-semibold text-4xl text-center pt-8">
-            No data found
+            No Product Available
           </p>
         )}
       </div>
@@ -147,3 +146,4 @@ const Brand = () => {
 };
 
 export default Brand;
+

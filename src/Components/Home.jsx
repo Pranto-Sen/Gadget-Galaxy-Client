@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Cards from './Cards';
 import Slider from './Slider';
 import Footer from './Footer';
+import About from './About';
+import Contact from './Contact';
 
 const Home = () => {
      const [items, setItems] = useState([]);
@@ -23,6 +25,8 @@ const Home = () => {
             <Cards item={item}></Cards>
           ))}
         </div>
+        <About></About>
+        <Contact></Contact>
         <Footer></Footer>
       </div>
     );
