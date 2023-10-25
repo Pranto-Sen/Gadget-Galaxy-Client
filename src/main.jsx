@@ -40,7 +40,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(
+            `https://technology-and-electronics-server-jciw16uv3.vercel.app/product/${params.id}`
+          ),
       },
       {
         path: "/productdetails/:id",
@@ -50,7 +52,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/details/${params.id}`),
+          fetch(
+            `https://technology-and-electronics-server-jciw16uv3.vercel.app/details/${params.id}`
+          ),
       },
       {
         path: "/:brand",

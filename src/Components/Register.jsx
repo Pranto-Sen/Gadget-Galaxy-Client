@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-// import google from "../images/google.png";
+ import google from "../images/google.png";
 // import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
@@ -70,9 +70,9 @@ const Register = () => {
 
   return (
     <div>
-      <section class="flex flex-col md:flex-row h-screen items-center">
+      <section class="flex flex-col md:flex-row mt-16 items-center">
         <div
-          class="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
+          class="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3  px-6 lg:px-16 xl:px-12
         flex items-center justify-center"
         >
           <div class="w-full h-100">
@@ -136,7 +136,7 @@ const Register = () => {
               class="flex w-full bg-slate-200  text-black font-semibold rounded-lg
                py-3 mt-6 "
             >
-              {/* <img src={google} className="w-6 h-6 mr-4 ml-24"></img> */}
+              <img src={google} className="w-6 h-6 mr-4 ml-24"></img>
               Log In with Google
             </button>
 

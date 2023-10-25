@@ -30,22 +30,25 @@ const UpdateProduct = () => {
     };
     console.log(updatedProduct);
     // Send a PUT request to update the product
-    fetch(`http://localhost:5000/product/${product._id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedProduct),
-    })
+    fetch(
+      `https://technology-and-electronics-server-jciw16uv3.vercel.app/product/${product._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-         Swal.fire({
-           text: "Product updated Successfully",
-           icon: "success",
-           confirmButtonText: "Done",
-         });
-         navigate("/");
+        Swal.fire({
+          text: "Product updated Successfully",
+          icon: "success",
+          confirmButtonText: "Done",
+        });
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);

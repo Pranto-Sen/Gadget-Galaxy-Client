@@ -24,7 +24,7 @@ const MyCart = () => {
           <table className="table table-zebra">
             <tbody>
               <tr className="flex justify-center items-center">
-                <td className="w-80 font-semibold">{cart.name}</td>
+                <td className="md:w-80 font-semibold">{cart.name}</td>
                 <td className="">
                   {" "}
                   <button

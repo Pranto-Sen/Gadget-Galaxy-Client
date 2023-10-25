@@ -18,22 +18,25 @@ const AddProduct = () => {
         const addProduct = { name, brand, type, price, image, description, rating }
         // console.log(data);
 
-        fetch("http://localhost:5000/addProduct", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(addProduct),
-        })
+        fetch(
+          "https://technology-and-electronics-server-jciw16uv3.vercel.app/addProduct",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(addProduct),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-             Swal.fire({
-               text: "Product added Successfully",
-               icon: "success",
-               confirmButtonText: "Done",
-             });
-             navigate("/");
+            Swal.fire({
+              text: "Product added Successfully",
+              icon: "success",
+              confirmButtonText: "Done",
+            });
+            navigate("/");
           });
     }
    

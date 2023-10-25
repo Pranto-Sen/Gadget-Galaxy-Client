@@ -8,9 +8,12 @@ const Brand = () => {
   const [brands, setBrands] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const handleClick = () => {
-    fetch(`http://localhost:5000/${brand}`, {
-      method: "GET",
-    })
+    fetch(
+      `https://technology-and-electronics-server-jciw16uv3.vercel.app/${brand}`,
+      {
+        method: "GET",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
