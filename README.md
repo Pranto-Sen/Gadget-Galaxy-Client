@@ -5,4 +5,4 @@
 - User first login and then access this product info and details.
 - When a new user come there is a register option and google login option for the user for verify.
 
-# live link: https://technology-98a6c.web.app/
+live link: https://technology-98a6c.web.app/
