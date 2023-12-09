@@ -5,4 +5,6 @@
 - User first login and then access this product info and details.
 - When a new user come there is a register option and google login option for the user for verify.
 
+  
+## Technology use: ``` React js, Expressjs, Tailwind, MongoDB ```
 live link: https://technology-98a6c.web.app/
